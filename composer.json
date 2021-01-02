@@ -1,0 +1,23 @@
+{
+    "name": "braincart/php-api-client",
+    "description": "PHP client for the Braincart API.",
+    "keywords": ["PHP","client","Braincart","API"],
+    "homepage": "https://github.com/braincart/php-api-client",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Braincart Systems Ltd.",
+            "email": "service@braincart.com",
+            "homepage": "https://braincart.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Braincart\\": "src/classes/"
+        }
+    }
+}
