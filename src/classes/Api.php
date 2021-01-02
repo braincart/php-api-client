@@ -25,7 +25,6 @@ class Api {
 
         $curl = curl_init();
         curl_setopt_array($curl, [
-            CURLOPT_FAILONERROR    => true,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_POSTFIELDS     => $this->requestBody,
             CURLOPT_CUSTOMREQUEST  => $this->requestMethod,
