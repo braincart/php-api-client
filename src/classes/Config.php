@@ -6,7 +6,7 @@ class Config {
 
     function __construct(){
         
-        $file = '../../../config.inc.php';
+        $file = '../../../../config.inc.php';
         if (file_exists($file)){
             require($file);
         } else {
