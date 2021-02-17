@@ -52,24 +52,36 @@ class Api {
     function get($uri,$body = false){
         $this->requestMethod = 'GET';
         $this->requestUri = $uri;
+        if ($body){
+            $this->requestBody = $body;
+        }
         $this->call();
     }
     
     function post($uri,$body = false){
         $this->requestMethod = 'POST';
         $this->requestUri = $uri;
+        if ($body){
+            $this->requestBody = $body;
+        }
         $this->call();
     }
 
     function put($uri,$body = false){
         $this->requestMethod = 'PUT';
         $this->requestUri = $uri;
+        if ($body){
+            $this->requestBody = $body;
+        }
         $this->call();
     }
 
     function delete($uri,$body = false){
         $this->requestMethod = 'DELETE';
         $this->requestUri = $uri;
+        if ($body){
+            $this->requestBody = $body;
+        }
         $this->call();
     }
 

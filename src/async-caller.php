@@ -12,14 +12,18 @@
 
     $bc = new braincart\Api();
 
+    $body = false;
+    if (!empty($_POST['body'])){
+        $body = $_POST['body'];
+    }
     if (strToUpper($_POST['method']) == 'GET'){
-        $bc->get($_POST['endpoint']);
+        $bc->get($_POST['endpoint'],$body);
     } elseif (strToUpper($_POST['method']) == 'POST'){
-        $bc->post($_POST['endpoint']);
+        $bc->post($_POST['endpoint'],$body);
     } elseif (strToUpper($_POST['method']) == 'PUT'){
-        $bc->put($_POST['endpoint']);
+        $bc->put($_POST['endpoint'],$body);
     } elseif (strToUpper($_POST['method']) == 'DELETE'){
-        $bc->delete($_POST['endpoint']);
+        $bc->delete($_POST['endpoint'],$body);
     }
 
     if (!empty($bc->getResponse())){
