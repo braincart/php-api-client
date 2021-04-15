@@ -27,7 +27,9 @@
     }
 
     if (!empty($bc->getResponse())){
-        echo json_encode($bc->getResponse());
+        $response = $bc->getResponse();
+        http_response_code($response->status_code);
+        echo json_encode($response);
     } else {
         braincart\ErrorAsync::connection();
     }
