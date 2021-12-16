@@ -5,6 +5,8 @@
     include_once('classes/Api.php');
     include_once('classes/Template.php');
 
+    include_once('sync-functions.php');
+
     session_start();
     register_shutdown_function("braincart\ErrorPage::shutdown");
     
