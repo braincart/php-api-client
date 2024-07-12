@@ -15,3 +15,13 @@
 
         return $bc->getResponse();
     }
+
+    function apiPostAffiliate($affiliateCode, $successCallback = null, $errorCallback = null){
+
+        $bc = new braincart\Api();
+        $bc->post('/affiliate',[
+            'affiliate_code' => $affiliateCode,
+        ]);
+
+        return $bc->getResponse();
+    }
