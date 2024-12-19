@@ -1,6 +1,6 @@
 <?php
 
-    function apiGetProducts($bandIds = null, $categoryId = null, $priceMin = null, $priceMax = null, $filters = null, $order = null, $limit = null, $successCallback = null, $errorCallback = null){
+    function apiGetProducts($brandIds = null, $categoryId = null, $priceMin = null, $priceMax = null, $filters = null, $order = null, $limit = null, $successCallback = null, $errorCallback = null){
 
         $bc = new braincart\Api();
         $bc->get('/products',[
