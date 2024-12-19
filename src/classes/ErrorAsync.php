@@ -7,7 +7,7 @@ class ErrorAsync {
     static function shutdown() {
 
         $error = error_get_last();
-        if (!is_null($error) && ($error['type'] === E_ERROR || $error['type'] === E_PARSE)) {
+        if (!empty($error['type']) && ($error['type'] === E_ERROR || $error['type'] === E_PARSE)) {
             error_log($error['message']);
         }
     }
