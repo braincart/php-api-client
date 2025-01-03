@@ -29,7 +29,7 @@
     function apiPostListConfirm($list, $email, $successCallback = null, $errorCallback = null){
 
         $bc = new braincart\Api();
-        $bc->post('/list/subscribe',[
+        $bc->post('/list/confirm',[
             'list' => $list,
             'email' => $email
         ]);
