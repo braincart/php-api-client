@@ -26,23 +26,25 @@
         return $bc->getResponse();
     }
 
-    function apiPostListConfirm($list, $email, $successCallback = null, $errorCallback = null){
+    function apiPostListConfirm($list, $email, $key, $successCallback = null, $errorCallback = null){
 
         $bc = new braincart\Api();
         $bc->post('/list/confirm',[
             'list' => $list,
-            'email' => $email
+            'email' => $email,
+            'key' => $key
         ]);
 
         return $bc->getResponse();
     }
 
-    function apiPostListUnsubscribe($list, $email, $successCallback = null, $errorCallback = null){
+    function apiPostListUnsubscribe($list, $email, $key, $successCallback = null, $errorCallback = null){
 
         $bc = new braincart\Api();
         $bc->post('/list/unsubscribe',[
             'list' => $list,
-            'email' => $email
+            'email' => $email,
+            'key' => $key
         ]);
 
         return $bc->getResponse();
