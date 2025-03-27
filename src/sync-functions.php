@@ -49,3 +49,13 @@
 
         return $bc->getResponse();
     }
+
+    function apiPutSessionLanguage($languageCode, $pageUrl, $successCallback = null, $errorCallback = null){
+
+        $bc = new braincart\Api();
+        $bc->put('/session/language/'.$languageCode,[
+            'url' => $pageUrl
+        ]);
+
+        return $bc->getResponse();
+    }
