@@ -4,6 +4,7 @@
     include_once('classes/Config.php');
     include_once('classes/Api.php');
     include_once('classes/Template.php');
+    include_once('classes/Token.php');
 
     include_once('sync-functions.php');
 

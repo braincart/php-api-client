@@ -4,6 +4,7 @@
     include_once('classes/Config.php');
     include_once('classes/Api.php');
     include_once('classes/Template.php');
+    include_once('classes/Token.php');
 
     session_start();
     register_shutdown_function("braincart\ErrorAsync::shutdown");
