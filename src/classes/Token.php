@@ -5,7 +5,7 @@ namespace braincart;
 class Token {
 
     private $token = false;
-    private $path = '../../../../token.json';
+    private $path = '../../../../api.token';
 
     function __construct() {
         if (!is_file($this->path)) {
