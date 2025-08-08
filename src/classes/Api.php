@@ -35,7 +35,7 @@ class Api {
             CURLOPT_HTTPHEADER => [
                 'Content-Type: application/json',
                 'Content-Length: ' . strlen($this->requestBody),
-                'Authorization: Bearer ' . $token->getToken()
+                'X-Access-Token: ' . $token->getToken(),
             ],
         ]);
 
