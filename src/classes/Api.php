@@ -23,6 +23,8 @@ class Api {
 
         $this->requestBody = json_encode(array_merge($this->requestBase,$this->requestBody));
 
+        $token = new Token;
+
         $curl = curl_init();
         curl_setopt_array($curl, [
             CURLOPT_RETURNTRANSFER => true,
@@ -33,6 +35,7 @@ class Api {
             CURLOPT_HTTPHEADER => [
                 'Content-Type: application/json',
                 'Content-Length: ' . strlen($this->requestBody),
+                'Authorization: Bearer ' . $token->getToken()
             ],
         ]);
 
@@ -42,6 +45,9 @@ class Api {
             $_SESSION['session_key']   = $response->session->key;
             $_SESSION['language_code'] = $response->session->language_code;
             $_SESSION['currency_code'] = $response->session->currency_code;
+        }
+        if (!empty($response->token)){
+            $token->updateToken($response->token);
         }
 
         $this->requestResponse = $response;
