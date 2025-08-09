@@ -26,6 +26,12 @@ class ErrorPage {
         new Template('error_500');
     }
 
+    static function badRequest() {
+
+        http_response_code(400);
+        new Template('error_400');
+    }
+
     static function notFound() {
 
         http_response_code(404);

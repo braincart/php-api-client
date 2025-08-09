@@ -27,7 +27,9 @@
                 new braincart\Template($bc->getPayload()->page->template,$bc->getPayload());
             }
         } else {
-            if ($bc->getStatusCode() == 404){
+            if ($bc->getStatusCode() == 400){
+                braincart\ErrorPage::badRequest();
+            } elseif ($bc->getStatusCode() == 404){
                 braincart\ErrorPage::notFound();
             } else {
                 braincart\ErrorPage::api($bc->getError());
