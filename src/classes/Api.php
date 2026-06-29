@@ -13,7 +13,7 @@ class Api {
     function __construct(){
         
         $this->requestBase = [
-            'ip_address' => $_SERVER['REMOTE_ADDR'],
+            'ip_address' => $_SERVER['HTTP_CF_CONNECTING_IP'] ?? $_SERVER['REMOTE_ADDR'],
             'session_id' => @$_SESSION['session_id'] ?: NULL,
             'session_key' => @$_SESSION['session_key'] ?: NULL,
         ];
